@@ -1,16 +1,33 @@
-# React + Vite
+# Event Management Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, full-stack React application for discovering events, managing bookings, and creating new events. This project demonstrates advanced state management, data fetching, and routing patterns.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Events Discovery:** Browse a grid of events fetched dynamically from the server.
+* **Event Details:** Dedicated pages for each event with streaming data and available ticket tiers.
+* **Booking Flow:** A comprehensive 3-step booking wizard managed by `useReducer` with optimistic UI updates.
+* **Event Creation:** A multi-step form wizard utilizing Redux Toolkit to capture event details, save drafts locally, and publish to the backend.
+* **Global Theming:** Light/Dark mode toggle powered by the Context API and persisted via `localStorage`.
+* **Mock Authentication:** Simulated user sessions and personalized profile features.
 
-## React Compiler
+## 🛠️ Tech Stack & State Management Strategy
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project implements a highly intentional state management architecture:
 
-## Expanding the ESLint configuration
+* **Framework:** React 18 & Vite
+* **Routing:** React Router DOM (utilizing `createBrowserRouter` for loaders and actions)
+* **Server State (Data Fetching/Caching):** TanStack Query (React Query)
+* **Complex Form State:** Redux Toolkit (Create Event Wizard)
+* **Local UI State:** `useState` & `useReducer` (Booking Flow)
+* **Global UI State:** React Context API (Theme & Auth)
+* **Mock Backend:** `json-server`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Setup & Installation Instructions
+
+To run this project locally, you will need to start both the React development server and the mock JSON database.
+
+### 1. Install Dependencies
+Ensure you have Node.js installed, then run the following in the project root:
+```bash
+npm install
